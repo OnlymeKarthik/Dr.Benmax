@@ -96,14 +96,14 @@ export default function HospitalPortal() {
     if (success) {
         return (
             <div className="max-w-2xl mx-auto">
-                <div className="bg-white rounded-3xl shadow-2xl p-10 text-center">
-                    <div className="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full mb-6">
+                <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl p-10 text-center border-2 border-medical-teal/10">
+                    <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-green-100 to-green-200 rounded-full mb-6 shadow-lg">
                         <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                     </div>
                     <h2 className="text-3xl font-bold text-medical-dark mb-4">Claim Submitted Successfully!</h2>
-                    <div className="bg-medical-teal/10 border border-medical-teal/30 rounded-xl p-5 mb-6">
+                    <div className="bg-gradient-to-r from-medical-teal/10 to-medical-cyan/10 border-2 border-medical-teal/30 rounded-xl p-5 mb-6 shadow-sm">
                         <p className="text-sm text-gray-600 mb-2">Claim ID</p>
                         <p className="text-2xl font-mono font-bold text-medical-teal">{claimId}</p>
                     </div>
@@ -112,7 +112,7 @@ export default function HospitalPortal() {
                     </p>
                     <button
                         onClick={() => setSuccess(false)}
-                        className="bg-medical-teal text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-medical-teal-dark transition-all shadow-lg shadow-medical-teal/30"
+                        className="bg-gradient-to-r from-medical-cyan to-medical-teal text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-xl hover:shadow-medical-teal/40 transition-all transform hover:scale-105"
                     >
                         Submit Another Claim
                     </button>
@@ -123,7 +123,7 @@ export default function HospitalPortal() {
 
     return (
         <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-2xl p-10">
+            <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl p-10 border-2 border-medical-teal/10">
                 {/* Header */}
                 <div className="mb-8">
                     <h2 className="text-3xl font-bold text-medical-dark mb-2">Submit New Claim</h2>
@@ -132,7 +132,7 @@ export default function HospitalPortal() {
 
                 {/* Wallet Warning */}
                 {!isConnected && (
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                    <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-2 border-yellow-300 rounded-xl p-4 mb-6 shadow-sm">
                         <div className="flex items-start">
                             <svg className="w-6 h-6 text-yellow-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -147,7 +147,7 @@ export default function HospitalPortal() {
 
                 {/* Error Message */}
                 {error && (
-                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
+                    <div className="bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-300 text-red-700 px-4 py-3 rounded-xl mb-6 shadow-sm">
                         {error}
                     </div>
                 )}
@@ -164,7 +164,7 @@ export default function HospitalPortal() {
                                 type="text"
                                 value={formData.hospital_id}
                                 onChange={(e) => setFormData({ ...formData, hospital_id: e.target.value })}
-                                className="w-full px-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                                className="w-full px-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                                 placeholder="HOSP-001"
                                 required
                             />
@@ -178,7 +178,7 @@ export default function HospitalPortal() {
                                 type="text"
                                 value={formData.patient_name}
                                 onChange={(e) => setFormData({ ...formData, patient_name: e.target.value })}
-                                className="w-full px-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                                className="w-full px-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                                 placeholder="John Doe"
                                 required
                             />
@@ -192,7 +192,7 @@ export default function HospitalPortal() {
                                 type="text"
                                 value={formData.patient_id}
                                 onChange={(e) => setFormData({ ...formData, patient_id: e.target.value })}
-                                className="w-full px-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                                className="w-full px-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                                 placeholder="PAT-12345"
                                 required
                             />
@@ -205,7 +205,7 @@ export default function HospitalPortal() {
                             <select
                                 value={formData.currency}
                                 onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-                                className="w-full px-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                                className="w-full px-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                                 required
                             >
                                 <option value="INR">INR (₹)</option>
@@ -229,7 +229,7 @@ export default function HospitalPortal() {
                                 step="0.01"
                                 value={formData.amount}
                                 onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
-                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                                className="w-full pl-12 pr-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                                 placeholder="0.00"
                                 required
                             />
@@ -244,7 +244,7 @@ export default function HospitalPortal() {
                         <textarea
                             value={formData.diagnosis}
                             onChange={(e) => setFormData({ ...formData, diagnosis: e.target.value })}
-                            className="w-full px-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                            className="w-full px-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                             placeholder="Describe the medical condition and treatment..."
                             rows={4}
                             required
@@ -256,7 +256,7 @@ export default function HospitalPortal() {
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
                             Upload Documents (Optional)
                         </label>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-medical-teal transition">
+                        <div className="border-2 border-dashed border-medical-teal/30 rounded-xl p-6 text-center hover:border-medical-cyan hover:bg-medical-light/20 transition-all">
                             <input
                                 type="file"
                                 multiple
@@ -278,7 +278,7 @@ export default function HospitalPortal() {
                         {files.length > 0 && (
                             <div className="mt-4 space-y-2">
                                 {files.map((file, index) => (
-                                    <div key={index} className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg">
+                                    <div key={index} className="flex items-center justify-between bg-gradient-to-r from-medical-light/50 to-medical-light/30 px-4 py-3 rounded-lg border border-medical-teal/20">
                                         <div className="flex items-center space-x-3">
                                             <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -307,7 +307,7 @@ export default function HospitalPortal() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-medical-teal text-white py-4 rounded-xl font-semibold text-lg hover:bg-medical-teal-dark transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-medical-teal/30"
+                        className="w-full bg-gradient-to-r from-medical-cyan to-medical-teal text-white py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-medical-teal/40 transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {loading ? (
                             <span className="flex items-center justify-center">

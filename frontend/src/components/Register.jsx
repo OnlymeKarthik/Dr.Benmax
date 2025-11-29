@@ -51,9 +51,9 @@ export default function Register({ onSwitchToLogin }) {
 
     if (success) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-medical-bg-start via-medical-teal to-medical-bg-end p-4">
+            <div className="min-h-screen flex items-center justify-center bg-medical-gradient p-4">
                 <div className="max-w-md w-full bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-green-500 rounded-full mb-4">
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full mb-4 shadow-lg">
                         <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
@@ -66,10 +66,19 @@ export default function Register({ onSwitchToLogin }) {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-medical-bg-start via-medical-teal to-medical-bg-end p-4 relative overflow-hidden">
-            {/* Decorative blobs */}
-            <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="min-h-screen flex items-center justify-center bg-medical-gradient p-4 relative overflow-hidden">
+            {/* Decorative glassmorphic blobs */}
+            <div className="absolute top-20 left-20 w-72 h-72 bg-white/20 rounded-full blur-3xl backdrop-blur-lg"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/15 rounded-full blur-3xl backdrop-blur-lg"></div>
+            <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-medical-cyan/20 rounded-full blur-3xl backdrop-blur-lg"></div>
+
+            {/* Medical icon decorations */}
+            <div className="absolute top-1/4 right-1/4 w-40 h-40 opacity-30">
+                <svg viewBox="0 0 100 100" className="text-white" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <circle cx="50" cy="50" r="35" strokeDasharray="5,5"/>
+                    <path d="M 50 20 L 50 80 M 20 50 L 80 50" strokeWidth="4" strokeLinecap="round"/>
+                </svg>
+            </div>
 
             <div className="max-w-2xl w-full relative z-10">
                 <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-10 space-y-6">

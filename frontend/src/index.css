@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }

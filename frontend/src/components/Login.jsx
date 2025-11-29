@@ -22,16 +22,36 @@ export default function Login({ onSwitchToRegister }) {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-medical-bg-start via-medical-teal to-medical-bg-end p-4 relative overflow-hidden">
-            {/* Decorative blobs */}
-            <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
+        <div className="min-h-screen flex items-center justify-center bg-medical-gradient p-4 relative overflow-hidden">
+            {/* Decorative glassmorphic blobs */}
+            <div className="absolute top-20 left-20 w-72 h-72 bg-white/20 rounded-full blur-3xl backdrop-blur-lg"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/15 rounded-full blur-3xl backdrop-blur-lg"></div>
+            <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-medical-cyan/20 rounded-full blur-3xl backdrop-blur-lg"></div>
 
-            {/* Medical icons decorations */}
-            <div className="absolute top-32 left-32 w-32 h-32 opacity-20">
+            {/* Medical icon decorations - DNA strand */}
+            <div className="absolute top-40 left-40 w-40 h-40 opacity-30">
+                <svg viewBox="0 0 100 100" className="text-white animate-pulse" fill="none" stroke="currentColor" strokeWidth="2">
+                    <ellipse cx="30" cy="20" rx="8" ry="8" fill="currentColor" opacity="0.6"/>
+                    <ellipse cx="70" cy="30" rx="8" ry="8" fill="currentColor" opacity="0.6"/>
+                    <ellipse cx="30" cy="50" rx="8" ry="8" fill="currentColor" opacity="0.6"/>
+                    <ellipse cx="70" cy="60" rx="8" ry="8" fill="currentColor" opacity="0.6"/>
+                    <ellipse cx="30" cy="80" rx="8" ry="8" fill="currentColor" opacity="0.6"/>
+                    <path d="M 30 20 Q 50 25 70 30 M 70 30 Q 50 40 30 50 M 30 50 Q 50 55 70 60 M 70 60 Q 50 70 30 80" strokeWidth="3"/>
+                </svg>
+            </div>
+
+            {/* Heartbeat line decoration */}
+            <div className="absolute bottom-40 right-32 w-48 h-24 opacity-40">
+                <svg viewBox="0 0 200 100" className="text-white" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M 0 50 L 40 50 L 50 30 L 60 70 L 70 40 L 80 50 L 200 50" strokeLinecap="round"/>
+                </svg>
+            </div>
+
+            {/* Medical cross decoration */}
+            <div className="absolute bottom-1/4 left-1/4 w-32 h-32 opacity-25">
                 <svg viewBox="0 0 100 100" className="text-white" fill="currentColor">
-                    <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" strokeWidth="8" fill="none" />
+                    <rect x="40" y="10" width="20" height="80" rx="4"/>
+                    <rect x="10" y="40" width="80" height="20" rx="4"/>
                 </svg>
             </div>
 

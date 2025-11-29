@@ -7,15 +7,22 @@ export default {
     theme: {
         extend: {
             colors: {
-                'medical-teal': '#2A9D8F',
-                'medical-teal-dark': '#21867a',
-                'medical-teal-light': '#4DB6AC',
-                'medical-bg-start': '#4FD1C5',
-                'medical-bg-end': '#2C7A7B',
-                'medical-dark': '#264653',
+                'medical-teal': '#3AAFA9',
+                'medical-teal-dark': '#2B7A78',
+                'medical-teal-light': '#6FD4D1',
+                'medical-cyan': '#17BEBB',
+                'medical-bg-start': '#7FE3DF',
+                'medical-bg-end': '#2B7A78',
+                'medical-dark': '#2B7A78',
+                'medical-light': '#DEF2F1',
+                'medical-accent': '#FEFFFF',
             },
             fontFamily: {
                 'sans': ['Inter', 'system-ui', 'sans-serif'],
+            },
+            backgroundImage: {
+                'medical-gradient': 'linear-gradient(135deg, #7FE3DF 0%, #3AAFA9 50%, #2B7A78 100%)',
+                'medical-card': 'linear-gradient(135deg, #FEFFFF 0%, #DEF2F1 100%)',
             },
         },
     },

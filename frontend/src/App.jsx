@@ -14,7 +14,7 @@ function AppContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-medical-bg-start via-medical-teal to-medical-bg-end">
+      <div className="min-h-screen flex items-center justify-center bg-medical-gradient">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-white"></div>
           <p className="mt-4 text-white font-medium">Loading...</p>
@@ -32,14 +32,14 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-medical-teal/5 to-medical-teal/10">
+    <div className="min-h-screen bg-gradient-to-br from-medical-light via-white to-medical-light/50">
       {/* Navigation Bar */}
-      <nav className="bg-white shadow-lg border-b-2 border-medical-teal/20">
+      <nav className="bg-white/95 backdrop-blur-lg shadow-xl border-b-2 border-medical-teal/30">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-medical-teal to-medical-teal-dark rounded-xl flex items-center justify-center shadow-lg shadow-medical-teal/30">
+              <div className="w-12 h-12 bg-gradient-to-br from-medical-cyan to-medical-teal-dark rounded-2xl flex items-center justify-center shadow-lg shadow-medical-teal/40">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
@@ -78,7 +78,7 @@ function AppContent() {
             <div className="flex items-center space-x-4">
               {/* Wallet Connection */}
               {isConnected ? (
-                <div className="flex items-center space-x-3 bg-green-50 px-4 py-2 rounded-lg border border-green-200">
+                <div className="flex items-center space-x-3 bg-gradient-to-br from-green-50 to-green-100 px-4 py-2.5 rounded-xl border-2 border-green-300/50 shadow-sm">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <div className="text-sm">
                     <p className="font-medium text-gray-900">
@@ -100,7 +100,7 @@ function AppContent() {
                 <button
                   onClick={connect}
                   disabled={connecting}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-medical-teal to-medical-teal-dark text-white px-5 py-2.5 rounded-xl font-medium hover:shadow-lg hover:shadow-medical-teal/30 transition-all disabled:opacity-50"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-medical-cyan to-medical-teal text-white px-5 py-2.5 rounded-xl font-medium hover:shadow-lg hover:shadow-medical-teal/40 transition-all disabled:opacity-50 transform hover:scale-105"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -113,7 +113,7 @@ function AppContent() {
               )}
 
               {/* User Menu */}
-              <div className="flex items-center space-x-3 bg-medical-teal/10 px-4 py-2 rounded-xl border border-medical-teal/20">
+              <div className="flex items-center space-x-3 bg-gradient-to-br from-medical-teal/10 to-medical-cyan/10 px-4 py-2.5 rounded-xl border-2 border-medical-teal/30 shadow-sm">
                 <div className="w-9 h-9 bg-gradient-to-br from-medical-teal to-medical-teal-dark rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                   {user?.full_name?.charAt(0) || user?.username?.charAt(0) || 'U'}
                 </div>
@@ -142,9 +142,9 @@ function AppContent() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-12">
+      <footer className="bg-white/80 backdrop-blur-lg border-t-2 border-medical-teal/20 mt-12">
         <div className="container mx-auto px-6 py-6 text-center text-gray-600 text-sm">
-          <p>© 2025 Healthcare Blockchain Claims System. Powered by Polygon.</p>
+          <p className="font-medium">© 2025 Healthcare Blockchain Claims System. Powered by Polygon.</p>
         </div>
       </footer>
     </div>

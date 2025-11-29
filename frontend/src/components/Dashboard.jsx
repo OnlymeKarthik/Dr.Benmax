@@ -25,7 +25,7 @@ function Dashboard() {
     };
 
     return (
-        <div className="bg-white p-8 rounded-3xl shadow-2xl max-w-4xl mx-auto">
+        <div className="bg-white/95 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-4xl mx-auto border-2 border-medical-teal/10">
             <h2 className="text-3xl font-bold mb-6 text-medical-dark">Claims Dashboard</h2>
             <p className="text-gray-600 mb-8">Track and monitor insurance claim status</p>
 
@@ -35,12 +35,12 @@ function Dashboard() {
                     value={claimId}
                     onChange={(e) => setClaimId(e.target.value)}
                     placeholder="Enter Claim ID"
-                    className="flex-1 px-4 py-3 bg-gray-50 border-b-2 border-gray-200 focus:border-medical-teal focus:bg-white transition-all outline-none rounded-t-lg"
+                    className="flex-1 px-4 py-3 bg-medical-light/50 border-b-2 border-medical-teal/30 focus:border-medical-cyan focus:bg-white transition-all outline-none rounded-t-lg"
                 />
                 <button
                     onClick={fetchStatus}
                     disabled={loading}
-                    className="bg-medical-teal text-white px-8 py-3 rounded-xl font-semibold hover:bg-medical-teal-dark transition-all shadow-lg shadow-medical-teal/30 disabled:opacity-50"
+                    className="bg-gradient-to-r from-medical-cyan to-medical-teal text-white px-8 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-medical-teal/40 transition-all disabled:opacity-50 transform hover:scale-105"
                 >
                     {loading ? 'Searching...' : 'Track Claim'}
                 </button>
@@ -48,14 +48,14 @@ function Dashboard() {
 
             {loading && (
                 <div className="text-center py-8">
-                    <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-medical-teal"></div>
-                    <p className="text-gray-500 mt-4">Fetching claim data...</p>
+                    <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-medical-cyan"></div>
+                    <p className="text-gray-500 mt-4 font-medium">Fetching claim data...</p>
                 </div>
             )}
 
             {claimData && (
-                <div className="border-2 border-medical-teal/20 rounded-2xl overflow-hidden">
-                    <div className="bg-medical-teal/10 p-5 border-b-2 border-medical-teal/20">
+                <div className="border-2 border-medical-teal/30 rounded-2xl overflow-hidden shadow-lg">
+                    <div className="bg-gradient-to-r from-medical-teal/20 to-medical-cyan/20 p-5 border-b-2 border-medical-teal/30">
                         <h3 className="font-bold text-xl text-medical-dark">Claim #{claimData.id}</h3>
                     </div>
                     <div className="p-8 grid grid-cols-2 gap-8">
@@ -78,22 +78,22 @@ function Dashboard() {
 
                         <div className="col-span-2">
                             <p className="text-sm text-gray-500 mb-2">Blockchain Transaction Hash</p>
-                            <p className="font-mono text-sm bg-medical-teal/5 p-3 rounded-lg break-all text-medical-teal">
+                            <p className="font-mono text-sm bg-gradient-to-r from-medical-teal/10 to-medical-cyan/10 p-3 rounded-lg break-all text-medical-teal border border-medical-teal/20">
                                 {claimData.tx_hash || 'Waiting for settlement...'}
                             </p>
                         </div>
                     </div>
 
                     {/* Visual Progress Bar */}
-                    <div className="bg-gray-50 p-6 border-t-2 border-medical-teal/20">
-                        <div className="flex justify-between text-xs text-gray-500 mb-3">
+                    <div className="bg-gradient-to-br from-medical-light/50 to-white p-6 border-t-2 border-medical-teal/30">
+                        <div className="flex justify-between text-xs font-semibold text-gray-600 mb-3">
                             <span>Submitted</span>
                             <span>AI Validated</span>
                             <span>Settled</span>
                         </div>
-                        <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
                             <div
-                                className={`h-full bg-gradient-to-r from-medical-teal to-medical-teal-light transition-all duration-500 ${claimData.status === 'Submitted' ? 'w-1/3' :
+                                className={`h-full bg-gradient-to-r from-medical-cyan to-medical-teal transition-all duration-500 shadow-lg ${claimData.status === 'Submitted' ? 'w-1/3' :
                                         claimData.status === 'Approved' ? 'w-2/3' :
                                             claimData.status === 'Settled' ? 'w-full' : 'w-1/3'
                                     }`}
