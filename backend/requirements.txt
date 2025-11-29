@@ -1,0 +1,17 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+pydantic[email]
+web3==7.7.0
+psycopg2-binary==2.9.10
+python-dotenv==1.0.1
+sqlalchemy==2.0.36
+python-jose[cryptography]
+passlib[bcrypt]
+slowapi==0.1.9
+scikit-learn
+numpy
+requests==2.32.3
+cryptography
+python-multipart==0.0.20
+sentry-sdk[fastapi]
